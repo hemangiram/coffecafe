@@ -1,0 +1,11 @@
+<h1>All Blog Posts</h1>
+<ul>
+  {% for post in posts %}
+    <li>
+      <strong>{{ post.title }}</strong> by {{ post.author.username }} on {{ post.created_at }}
+      {% if post.author == user %}
+        - <a href="{% url 'edit_post' post.id %}">Edit</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
