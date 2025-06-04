@@ -165,7 +165,7 @@ def list_post(request):
     blogger = request.user
     posts = Post.objects.filter(author=blogger) 
     posts_list = Post.objects.filter(author=blogger).order_by('-id')  # newest first
-    paginator = Paginator(posts_list, 5)  # 5 posts per page
+    paginator = Paginator(posts_list, 3)  # 5 posts per page
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)   
