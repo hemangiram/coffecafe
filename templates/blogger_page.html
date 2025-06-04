@@ -1,0 +1,13 @@
+<h1>Welcome Blogger {{ request.user.username }}</h1>
+<h2>Your Blogs</h2>
+{% if posts %}
+{% csrf_token %}
+    <ul>
+    {% for post in posts %}
+        <li>{{ post.title }} ({{ post.created_at }})</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No blogs yet.</p>
+{% endif %}
+<a href="{% url 'logout' %}">Logout</a>

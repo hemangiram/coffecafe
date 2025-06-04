@@ -1,0 +1,31 @@
+
+
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+
+<h3>Comments</h3>
+<div id="comments">
+    {% for comment in comments %}
+      <div>
+        <strong>{{ comment.author.username }}</strong> on {{ comment.created_at|date:"M d, Y H:i" }} said:
+        <p>{{ comment.content }}</p>
+      </div>
+    {% empty %}
+      <p>No comments yet. Be the first to comment!</p>
+    {% endfor %}
+</div>
+
+<h3>Add a Comment</h3>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content" rows="4" cols="50" required></textarea><br>
+    <button type="submit">Submit Comment</button>
+</form>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <a href="{% url 'edit_post' post.id %}"></a>
+      <title>Edit Blog Post</title>
+    <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  form p {
+    margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .cancel-link {
+    display: inline-block;
+    margin-left: 15px;
+    color: #f44336;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .cancel-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+<body>
+    <h1>Edit Blog Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
+

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',  # Your blog app
+    'main',
+    
 ]
 
 MIDDLEWARE = [
@@ -118,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 #AUTH_USER_MODEL = 'blog.user'
 
 # Default primary key field type
@@ -127,11 +129,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+  
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"   
-
+LOGIN_REDIRECT_URL = '/role_redirect/'
 LOGIN_URL = '/login/'  
+AUTH_USER_MODEL = 'main.CustomUser' 
+APPEND_SLASH=True
 
-LOGIN_REDIRECT_URL = '/'
-APPEND_SLASH = True 

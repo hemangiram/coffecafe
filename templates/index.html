@@ -36,7 +36,6 @@ Bootstrap 5 HTML CSS Template
     </head>
     
     <body>
-                
             <main>
                 <nav class="navbar navbar-expand-lg">                
                     <div class="container">
@@ -52,6 +51,7 @@ Bootstrap 5 HTML CSS Template
                             <ul class="navbar-nav ms-lg-auto">
                                 {% url 'login' %}"
                                 {% url 'register' %}"
+                                
                                 <li class="nav-item">
                                     <a class="nav-link click-scroll" href="#section_1">Home</a>
                                 </li>
@@ -73,8 +73,10 @@ Bootstrap 5 HTML CSS Template
                                     <a class="nav-link click-scroll" href="#section_5">Contact</a>
                                 </li>
                                 
-                                
-                                <a href="{% url 'logout' %}">Logout</a>
+                              
+                                <a href="{% url 'logout' %}">Logout</a>&nbsp;&nbsp;&nbsp;
+                                 <a href="{% url 'home' %}">createpost</a>&nbsp;&nbsp;&nbsp;
+          
                             </ul>
 
 
@@ -108,10 +110,11 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
 
+
                     <div class="hero-slides"></div>
                 </section>
 
-
+            
                 <section class="about-section section-padding" id="section_2">
                     <div class="section-overlay"></div>
                     <div class="container">
@@ -235,6 +238,8 @@ Bootstrap 5 HTML CSS Template
                         </div>
                     </div>
                 </section>
+               
+
 
 
                 <section class="menu-section section-padding" id="section_3">

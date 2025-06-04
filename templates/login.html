@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,17 +46,18 @@
         {% endif %}
        
 
-        <label for="username">Username</label>
+       <label for="username">Username</label>
         <input type="text" name="username" id="username" required>
 
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required>
 
         <input type="submit" value="Login">
-        <link rel="stylesheet" href="/static/video/login.css">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
    
     
     </form>
+    {% if error %}<p>{{ error }}</p>{% endif %}
 </div>
 </body>
 </html>

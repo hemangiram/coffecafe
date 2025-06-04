@@ -1,0 +1,17 @@
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+#header {
+    background-color: #343a40;
+    color: white;
+}
+
+a {
+    color: #007bff;
+}
+
+.module h2 {
+    color: #ff5733;
+}

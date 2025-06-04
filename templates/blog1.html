@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogger 1 Dashboard</title>
+    <link rel="stylesheet" href="{% static 'blogger1.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Blogger 1's Blog</h1>
+    </header>
+    <main>
+        <a href="{% url 'blog1' %}"></a>
+        <p>This is the exclusive dashboard for Blogger 1.</p>
+        <a href="{% url 'create_post' %}">Create New Post</a> |
+        <a href="{% url 'list_post' username='adminadmin'  %}">View My Posts</a>
+    </main>
+    <footer>
+        <p>© 2025 Blogger 1 Blog</p>
+    </footer>
+</body>
+</html>

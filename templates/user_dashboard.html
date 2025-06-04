@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .dashboard-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>User Dashboard</h1>
+    <nav>
+        <a href="#" action= "{% url 'user_dashboard' %}">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Welcome, User!</h2>
+    <div class="dashboard-options">
+        <div class="card">
+            <h3>View Posts</h3>
+            <p>See all your posts.</p>
+            <button onclick="alert('Viewing posts')">Go</button>
+        </div>
+        <div class="card">
+            <h3>Create Post</h3>
+            <p>Add a new blog post.</p>
+            <button onclick="alert('Creating new post')">Go</button>
+        </div>
+        <div class="card">
+            <h3>Drafts</h3>
+            <p>Check your saved drafts.</p>
+            <button onclick="alert('Viewing drafts')">Go</button>
+        </div>
+        <div class="card">
+            <h3>Settings</h3>
+            <p>Update your profile settings.</p>
+            <button onclick="alert('Opening settings')">Go</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 MyBloggerSite. All rights reserved.
+</footer>
+
+</body>
+</html>
